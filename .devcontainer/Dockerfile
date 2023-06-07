@@ -1,8 +1,8 @@
-FROM ubuntu:latest 
+FROM alpine:latest 
 
 ARG KIND_VERSION=0.19.0
 
-RUN apt install curl docker-cli
+RUN apk add curl docker-cli
 
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 RUN chmod +x ./kubectl
